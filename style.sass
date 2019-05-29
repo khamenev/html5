@@ -1,2 +1,49 @@
-.container 
-    width: 1200px
+@import vars
+
+=border($width)
+    border-width: $width
+    border-style: solid
+    border-color: black
+    
+
+.header
+    width: $width-site
+    margin: 0 auto
+    height: 100px
+    background-color: green
+    @extend .dflex
+    +border(2px)
+
+.dflex
+    display: flex
+    flex-wrap: wrap
+
+.menu
+    @extend .dflex
+    li
+        list-style-type: none
+    a
+        color: red
+        padding: 15px
+        &:hover
+            color: blue
+            text-decoration: underline
+
+.main
+     width: $width-site
+     margin: 0 auto
+     background-color: orange
+     display: flex
+     flex-wrap: wrap
+
+.item  
+     width: $width-site / 3 - 2 * $border-width
+     height: 200px
+     border: $border-width solid #000
+
+.footer
+    width: $width-site
+    margin: 0 auto
+    height: 100px
+    background-color: #ccc 
+    
